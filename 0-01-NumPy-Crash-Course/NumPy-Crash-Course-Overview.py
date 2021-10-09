@@ -29,7 +29,7 @@ a = np.ones((2,4))
 print(a)
 
 # Create an array of random integers (uniform distribution between limits)
-
+# single random integer from 0 to 9
 a = np.random.randint(0,10)
 print(a)
 
@@ -82,7 +82,7 @@ print(arr.reshape(2,5))
 #########################
 
 # You can use .reshape() to change the shape of a 1d array to a 2d,3d, etc.. array
-# Keep in mind, we will mainly be working with 2d tabular data.  
+# Keep in mind, we will mainly be working with 2d tabular data.
 mat = np.arange(0,100).reshape(10,10)
 print(mat)
 
