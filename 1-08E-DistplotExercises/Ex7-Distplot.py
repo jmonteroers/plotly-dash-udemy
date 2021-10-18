@@ -7,24 +7,27 @@
 ######
 
 # Perform imports here:
-
-
+import pandas as pd
+import plotly.offline as pyo
+import plotly.figure_factory as ff
 
 
 # create a DataFrame from the .csv file:
-
-
+df = pd.read_csv('../data/iris.csv')
 
 # Define the traces
+flowers = ['Iris-setosa','Iris-versicolor','Iris-virginica']
+traces = [
+ df[df["class"]==flower]["petal_length"] for flower in flowers
+]
 
-# HINT:
-# This grabs the petal_length column for a particular flower
-df[df['class']=='Iris-some-flower-class']['petal_length']
-
-
-
-# Define a data variable
+group_labels = [
+    " ".join([word.capitalize() for word in flower.split('-')])
+    for flower in flowers
+]
 
 
 
 # Create a fig from data and layout, and plot the fig
+fig = ff.create_distplot(traces, group_labels)
+pyo.plot(fig, filename="my_solution7.html")

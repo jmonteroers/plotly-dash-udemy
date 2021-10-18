@@ -4,7 +4,7 @@
 # Set the range from 0 to 1, with a bin size of 0.02
 ######
 import pandas as pd
-import plotly.graph_objects as go
+import plotly.graph_objs as go
 import plotly.offline as pyo
 
 df = pd.read_csv('../../Data/abalone.csv')
